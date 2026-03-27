@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>forex trader ( gold trader) Forex — Trade Smart. Win Bold.</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+<style>
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+  :root {
+    --gold: #c9a84c;
+    --gold-light: #f0d080;
+    --green: #25d366;
+    --dark: #070710;
+    --card-bg: rgba(255,255,255,0.04);
+    --border: rgba(201,168,76,0.2);
+    --muted: #7a7a99;
+    --text: #e8e0d0;
+  }
+
+  body {
+    background: var(--dark);
+    background-image: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.09) 0%, transparent 55%);
+    color: var(--text);
+    font-family: 'DM Sans', sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 32px 16px 48px;
+    overflow-x: hidden;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(201,168,76,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(201,168,76,0.03) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .card {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 480px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  /* TOP LABEL */
+  .top-label {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 22px;
+    animation: fadeDown 0.6s ease both;
+    width: 100%;
+    justify-content: center;
+  }
+  .top-label::before, .top-label::after {
+    content: ''; flex: 1; max-width: 60px; height: 1px;
+  }
+  .top-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
+  .top-label::after  { background: linear-gradient(90deg, var(--gold), transparent); }
+
+  /* LOGO */
+  .logo-ring {
+    position: relative;
+    margin-bottom: 20px;
+    animation: fadeDown 0.7s 0.1s ease both;
+  }
+  .logo-ring a { display: inline-block; text-decoration: none; }
+  .logo-ring img {
+    width: 126px; height: 126px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--gold);
+    box-shadow: 0 0 0 7px rgba(201,168,76,0.10), 0 0 50px rgba(201,168,76,0.28);
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    display: block;
+  }
+  .logo-ring a:hover img {
+    transform: scale(1.05);
+    box-shadow: 0 0 70px rgba(201,168,76,0.45), 0 0 0 9px rgba(201,168,76,0.15);
+  }
+  .logo-ring::before {
+    content: '';
+    position: absolute;
+    inset: -8px;
+    border-radius: 50%;
+    border: 2px dashed rgba(201,168,76,0.28);
+    animation: spin 12s linear infinite;
+    pointer-events: none;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+
+  /* BRAND NAME */
+  .brand-name {
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(42px, 12vw, 62px);
+    font-weight: 700;
+    line-height: 1;
+    letter-spacing: 2px;
+    margin-bottom: 12px;
+    animation: fadeUp 0.6s 0.3s ease both;
+  }
+  .w1 { color: var(--gold-light); }
+  .w2 { color: var(--green); }
+
+  /* TAGLINE */
+  .tagline-top {
+    font-size: 12px;
+    font-weight: 500;
+    color: var(--muted);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+    animation: fadeUp 0.6s 0.4s ease both;
+  }
+  .tagline-top strong { color: var(--gold); }
+
+  .tagline-pills {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 6px;
+    font-size: 14px;
+    color: var(--text);
+    margin-bottom: 28px;
+    animation: fadeUp 0.6s 0.45s ease both;
+  }
+  .tagline-pills .sep { color: rgba(201,168,76,0.4); font-size: 18px; line-height: 1; }
+
+  /* STATS */
+  .stats {
+    display: grid;
+    grid-template-columns: 1fr 1px 1fr 1px 1fr;
+    width: 100%;
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    overflow: hidden;
+    margin-bottom: 14px;
+    animation: fadeUp 0.6s 0.55s ease both;
+  }
+  .stat-divider { background: var(--border); }
+  .stat { padding: 18px 8px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-size: 28px; font-weight: 700; line-height: 1;
+  }
+  .sn-gold  { color: var(--gold-light); }
+  .sn-white { color: #ffffff; }
+  .sn-green { color: var(--green); }
+  .stat-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+
+  /* FEATURE CARDS */
+  .features {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+    width: 100%;
+    margin-bottom: 14px;
+    animation: fadeUp 0.6s 0.65s ease both;
+  }
+  .feat {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.07);
+    border-radius: 14px;
+    padding: 18px 8px 14px;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    position: relative; overflow: hidden;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+  }
+  .feat::before {
+    content: ''; position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+  }
+  .feat.f1::before { background: var(--gold); }
+  .feat.f2::before { background: #ffffff; }
+  .feat.f3::before { background: var(--green); }
+  .feat:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.22); }
+  .feat-icon { font-size: 28px; }
+  .feat-label { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); line-height: 1.5; text-align: center; }
+
+  /* TRUST ROW */
+  .trust {
+    display: flex; align-items: center; justify-content: center;
+    flex-wrap: wrap; gap: 6px 18px;
+    font-size: 12px; color: var(--muted);
+    margin-bottom: 24px;
+    animation: fadeUp 0.6s 0.75s ease both;
+  }
+  .trust-item { display: flex; align-items: center; gap: 5px; }
+  .trust-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .td-gold  { background: var(--gold); }
+  .td-white { background: #ffffff; }
+  .td-green { background: var(--green); }
+
+  /* CTA */
+  .cta-btn {
+    display: flex; align-items: center; justify-content: center;
+    gap: 12px; width: 100%;
+    background: linear-gradient(135deg, #1db954 0%, #25d366 45%, #128c7e 100%);
+    background-size: 200% auto;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-size: clamp(18px, 5vw, 22px);
+    font-weight: 600;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    padding: 20px 20px;
+    border-radius: 14px;
+    text-decoration: none;
+    box-shadow: 0 8px 40px rgba(37,211,102,0.32), 0 2px 10px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
+    animation: fadeUp 0.6s 0.85s ease both;
+    position: relative; overflow: hidden;
+  }
+  .cta-btn::before {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.15), transparent 55%);
+    pointer-events: none;
+  }
+  .cta-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 16px 60px rgba(37,211,102,0.48);
+    background-position: right center;
+  }
+  .cta-btn:active { transform: translateY(0); }
+  .cta-icon { width: 26px; height: 26px; flex-shrink: 0; }
+
+  .cta-note {
+    font-size: 11px; color: rgba(122,122,153,0.55);
+    margin-top: 12px; letter-spacing: 0.5px;
+    animation: fadeUp 0.6s 0.95s ease both;
+  }
+
+  @keyframes fadeDown {
+    from { opacity: 0; transform: translateY(-20px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(24px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @media (max-width: 380px) {
+    .brand-name { font-size: 38px; }
+    .logo-ring img { width: 104px; height: 104px; }
+    .cta-btn { font-size: 16px; padding: 17px 14px; letter-spacing: 1.5px; }
+    .feat { padding: 14px 6px 12px; }
+  }
+</style>
+</head>
+<body>
+<div class="card">
+
+  <!-- TOP LABEL -->
+  <div class="top-label">forex trader ( gold trader) Forex</div>
+
+  <!-- LOGO -->
+  <div class="logo-ring">
+    <a href="https://wa.link/htjy5a" target="_blank" rel="noopener">
+      <img src="https://forex trader ( gold trader).site/wp-content/uploads/2026/03/Gemini_Generated_Image_vu7dldvu7dldvu7d-1.png" alt="forex trader ( gold trader) Forex" />
+    </a>
+  </div>
+
+  <!-- NAME -->
+  <div class="brand-name">
+    <span class="w1">ONEBY</span><span class="w2">ONE</span>
+  </div>
+
+  <!-- TAGLINES -->
+  <p class="tagline-top">— <strong>Global Forex Expert</strong> —</p>
+
+  <div class="tagline-pills">
+    <span>Live Signals</span>
+    <span class="sep">·</span>
+    <span>Expert Analysis</span>
+    <span class="sep">·</span>
+    <span>Daily Calls</span>
+  </div>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat">
+      <span class="stat-num sn-gold">5K+</span>
+      <span class="stat-label">Members</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num sn-white">Daily</span>
+      <span class="stat-label">Calls</span>
+    </div>
+    <div class="stat-divider"></div>
+    <div class="stat">
+      <span class="stat-num sn-green">Free</span>
+      <span class="stat-label">To Join</span>
+    </div>
+  </div>
+
+  <!-- FEATURES -->
+  <div class="features">
+    <div class="feat f1">
+      <span class="feat-icon">📡</span>
+      <span class="feat-label">Live<br/>Signals</span>
+    </div>
+    <div class="feat f2">
+      <span class="feat-icon">📊</span>
+      <span class="feat-label">Market<br/>Analysis</span>
+    </div>
+    <div class="feat f3">
+      <span class="feat-icon">🎯</span>
+      <span class="feat-label">Expert<br/>Tips</span>
+    </div>
+  </div>
+
+ 
+
+  <!-- CTA -->
+  <a href="https://wa.link/htjy5a" target="_blank" rel="noopener" class="cta-btn">
+    <svg class="cta-icon" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
+    </svg>
+    JOIN GROUP — FREE
+  </a>
+
+  <p class="cta-note">No spam · Real signals · Join 5000+ traders</p>
+
+</div>
+</body>
+</html>
