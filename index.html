@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>forex trader ( gold trader) Forex — Trade Smart. Win Bold.</title>
+<title>forex trader (gold trader) Forex — Trade Smart. Win Bold.</title>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;600;700&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 <style>
   *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,6 +19,10 @@
     --text: #e8e0d0;
   }
 
+  html, body {
+    height: 100%;
+  }
+
   body {
     background: var(--dark);
     background-image: radial-gradient(ellipse at 50% 0%, rgba(201,168,76,0.09) 0%, transparent 55%);
@@ -26,9 +30,10 @@
     font-family: 'DM Sans', sans-serif;
     min-height: 100vh;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 32px 16px 48px;
+    padding: 12px 16px 8px;
     overflow-x: hidden;
   }
 
@@ -48,30 +53,31 @@
     position: relative;
     z-index: 1;
     width: 100%;
-    max-width: 480px;
+    max-width: 420px;
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    gap: 0;
   }
 
   /* TOP LABEL */
   .top-label {
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 11px;
+    gap: 10px;
+    font-size: 10px;
     font-weight: 600;
     letter-spacing: 3px;
     text-transform: uppercase;
     color: var(--gold);
-    margin-bottom: 22px;
+    margin-bottom: 14px;
     animation: fadeDown 0.6s ease both;
     width: 100%;
     justify-content: center;
   }
   .top-label::before, .top-label::after {
-    content: ''; flex: 1; max-width: 60px; height: 1px;
+    content: ''; flex: 1; max-width: 50px; height: 1px;
   }
   .top-label::before { background: linear-gradient(90deg, transparent, var(--gold)); }
   .top-label::after  { background: linear-gradient(90deg, var(--gold), transparent); }
@@ -79,22 +85,22 @@
   /* LOGO */
   .logo-ring {
     position: relative;
-    margin-bottom: 20px;
+    margin-bottom: 12px;
     animation: fadeDown 0.7s 0.1s ease both;
   }
   .logo-ring a { display: inline-block; text-decoration: none; }
   .logo-ring img {
-    width: 126px; height: 126px;
+    width: 100px; height: 100px;
     border-radius: 50%;
     object-fit: cover;
     border: 3px solid var(--gold);
-    box-shadow: 0 0 0 7px rgba(201,168,76,0.10), 0 0 50px rgba(201,168,76,0.28);
+    box-shadow: 0 0 0 7px rgba(201,168,76,0.10), 0 0 40px rgba(201,168,76,0.28);
     transition: transform 0.4s ease, box-shadow 0.4s ease;
     display: block;
   }
   .logo-ring a:hover img {
     transform: scale(1.05);
-    box-shadow: 0 0 70px rgba(201,168,76,0.45), 0 0 0 9px rgba(201,168,76,0.15);
+    box-shadow: 0 0 60px rgba(201,168,76,0.45), 0 0 0 9px rgba(201,168,76,0.15);
   }
   .logo-ring::before {
     content: '';
@@ -110,11 +116,11 @@
   /* BRAND NAME */
   .brand-name {
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(42px, 12vw, 62px);
+    font-size: clamp(28px, 9vw, 46px);
     font-weight: 700;
     line-height: 1;
     letter-spacing: 2px;
-    margin-bottom: 12px;
+    margin-bottom: 8px;
     animation: fadeUp 0.6s 0.3s ease both;
   }
   .w1 { color: var(--gold-light); }
@@ -122,12 +128,12 @@
 
   /* TAGLINE */
   .tagline-top {
-    font-size: 12px;
+    font-size: 11px;
     font-weight: 500;
     color: var(--muted);
     letter-spacing: 2px;
     text-transform: uppercase;
-    margin-bottom: 8px;
+    margin-bottom: 6px;
     animation: fadeUp 0.6s 0.4s ease both;
   }
   .tagline-top strong { color: var(--gold); }
@@ -137,13 +143,13 @@
     align-items: center;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 6px;
-    font-size: 14px;
+    gap: 5px;
+    font-size: 13px;
     color: var(--text);
-    margin-bottom: 28px;
+    margin-bottom: 14px;
     animation: fadeUp 0.6s 0.45s ease both;
   }
-  .tagline-pills .sep { color: rgba(201,168,76,0.4); font-size: 18px; line-height: 1; }
+  .tagline-pills .sep { color: rgba(201,168,76,0.4); font-size: 16px; line-height: 1; }
 
   /* STATS */
   .stats {
@@ -152,37 +158,37 @@
     width: 100%;
     background: rgba(255,255,255,0.03);
     border: 1px solid var(--border);
-    border-radius: 14px;
+    border-radius: 12px;
     overflow: hidden;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     animation: fadeUp 0.6s 0.55s ease both;
   }
   .stat-divider { background: var(--border); }
-  .stat { padding: 18px 8px; display: flex; flex-direction: column; align-items: center; gap: 5px; }
+  .stat { padding: 13px 8px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
   .stat-num {
     font-family: 'Oswald', sans-serif;
-    font-size: 28px; font-weight: 700; line-height: 1;
+    font-size: 24px; font-weight: 700; line-height: 1;
   }
   .sn-gold  { color: var(--gold-light); }
   .sn-white { color: #ffffff; }
   .sn-green { color: var(--green); }
-  .stat-label { font-size: 10px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
+  .stat-label { font-size: 9px; letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted); }
 
   /* FEATURE CARDS */
   .features {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    gap: 10px;
+    gap: 8px;
     width: 100%;
-    margin-bottom: 14px;
+    margin-bottom: 10px;
     animation: fadeUp 0.6s 0.65s ease both;
   }
   .feat {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.07);
-    border-radius: 14px;
-    padding: 18px 8px 14px;
-    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    border-radius: 12px;
+    padding: 14px 8px 10px;
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
     position: relative; overflow: hidden;
     transition: transform 0.3s ease, border-color 0.3s ease;
   }
@@ -193,20 +199,20 @@
   .feat.f1::before { background: var(--gold); }
   .feat.f2::before { background: #ffffff; }
   .feat.f3::before { background: var(--green); }
-  .feat:hover { transform: translateY(-5px); border-color: rgba(201,168,76,0.22); }
-  .feat-icon { font-size: 28px; }
-  .feat-label { font-size: 10px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); line-height: 1.5; text-align: center; }
+  .feat:hover { transform: translateY(-4px); border-color: rgba(201,168,76,0.22); }
+  .feat-icon { font-size: 22px; }
+  .feat-label { font-size: 9px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); line-height: 1.5; text-align: center; }
 
   /* TRUST ROW */
   .trust {
     display: flex; align-items: center; justify-content: center;
-    flex-wrap: wrap; gap: 6px 18px;
-    font-size: 12px; color: var(--muted);
-    margin-bottom: 24px;
+    flex-wrap: wrap; gap: 4px 14px;
+    font-size: 11px; color: var(--muted);
+    margin-bottom: 14px;
     animation: fadeUp 0.6s 0.75s ease both;
   }
-  .trust-item { display: flex; align-items: center; gap: 5px; }
-  .trust-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .trust-item { display: flex; align-items: center; gap: 4px; }
+  .trust-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
   .td-gold  { background: var(--gold); }
   .td-white { background: #ffffff; }
   .td-green { background: var(--green); }
@@ -214,22 +220,23 @@
   /* CTA */
   .cta-btn {
     display: flex; align-items: center; justify-content: center;
-    gap: 12px; width: 100%;
+    gap: 10px; width: 100%;
     background: linear-gradient(135deg, #1db954 0%, #25d366 45%, #128c7e 100%);
     background-size: 200% auto;
     color: #fff;
     font-family: 'Oswald', sans-serif;
-    font-size: clamp(18px, 5vw, 22px);
+    font-size: clamp(16px, 4.5vw, 20px);
     font-weight: 600;
     letter-spacing: 2.5px;
     text-transform: uppercase;
-    padding: 20px 20px;
-    border-radius: 14px;
+    padding: 16px 20px;
+    border-radius: 12px;
     text-decoration: none;
     box-shadow: 0 8px 40px rgba(37,211,102,0.32), 0 2px 10px rgba(0,0,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease, background-position 0.5s ease;
     animation: fadeUp 0.6s 0.85s ease both;
     position: relative; overflow: hidden;
+    margin-bottom: 8px;
   }
   .cta-btn::before {
     content: ''; position: absolute; inset: 0;
@@ -242,12 +249,29 @@
     background-position: right center;
   }
   .cta-btn:active { transform: translateY(0); }
-  .cta-icon { width: 26px; height: 26px; flex-shrink: 0; }
+  .cta-icon { width: 22px; height: 22px; flex-shrink: 0; }
 
   .cta-note {
-    font-size: 11px; color: rgba(122,122,153,0.55);
-    margin-top: 12px; letter-spacing: 0.5px;
+    font-size: 10px; color: rgba(122,122,153,0.55);
+    margin-bottom: 10px; letter-spacing: 0.5px;
     animation: fadeUp 0.6s 0.95s ease both;
+  }
+
+  /* CREDIT LINE */
+  .credit {
+    font-size: 10px;
+    color: rgba(122,122,153,0.38);
+    letter-spacing: 0.5px;
+    animation: fadeUp 0.6s 1s ease both;
+    margin-top: 2px;
+  }
+  .credit a {
+    color: rgba(201,168,76,0.5);
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  .credit a:hover {
+    color: var(--gold);
   }
 
   @keyframes fadeDown {
@@ -260,10 +284,26 @@
   }
 
   @media (max-width: 380px) {
-    .brand-name { font-size: 38px; }
-    .logo-ring img { width: 104px; height: 104px; }
-    .cta-btn { font-size: 16px; padding: 17px 14px; letter-spacing: 1.5px; }
-    .feat { padding: 14px 6px 12px; }
+    .brand-name { font-size: 26px; }
+    .logo-ring img { width: 86px; height: 86px; }
+    .cta-btn { font-size: 15px; padding: 14px 12px; letter-spacing: 1.5px; }
+    .feat { padding: 11px 5px 9px; }
+  }
+
+  /* Ensure everything fits on one screen */
+  @media (max-height: 700px) {
+    .top-label { margin-bottom: 8px; }
+    .logo-ring img { width: 80px; height: 80px; }
+    .logo-ring { margin-bottom: 8px; }
+    .brand-name { font-size: 26px; margin-bottom: 6px; }
+    .tagline-pills { margin-bottom: 10px; }
+    .stats { margin-bottom: 8px; }
+    .stat { padding: 10px 8px; }
+    .features { margin-bottom: 8px; }
+    .feat { padding: 10px 6px 8px; }
+    .feat-icon { font-size: 18px; }
+    .trust { margin-bottom: 10px; }
+    .cta-btn { padding: 13px 16px; }
   }
 </style>
 </head>
@@ -271,18 +311,18 @@
 <div class="card">
 
   <!-- TOP LABEL -->
-  <div class="top-label">forex trader ( gold trader) Forex</div>
+  <div class="top-label">forex trader (gold trader) Forex</div>
 
   <!-- LOGO -->
   <div class="logo-ring">
     <a href="https://wa.link/htjy5a" target="_blank" rel="noopener">
-      <img src="https://onebyone.site/wp-content/uploads/2026/03/Gemini_Generated_Image_vu7dldvu7dldvu7d-1.png" alt="forex trader ( gold trader) Forex" />
+      <img src="https://onebyone.site/wp-content/uploads/2026/03/Gemini_Generated_Image_vu7dldvu7dldvu7d-1.png" alt="forex trader gold trader" />
     </a>
   </div>
 
   <!-- NAME -->
   <div class="brand-name">
-    <span class="w1">forex trader ( gold trader)</span><span class="w2"></span>
+    <span class="w1">forex trader (gold trader)</span><span class="w2"></span>
   </div>
 
   <!-- TAGLINES -->
@@ -330,7 +370,12 @@
     </div>
   </div>
 
- 
+  <!-- TRUST ROW -->
+  <div class="trust">
+    <div class="trust-item"><div class="trust-dot td-gold"></div>Verified Signals</div>
+    <div class="trust-item"><div class="trust-dot td-white"></div>No Bot</div>
+    <div class="trust-item"><div class="trust-dot td-green"></div>Live Community</div>
+  </div>
 
   <!-- CTA -->
   <a href="https://wa.link/htjy5a" target="_blank" rel="noopener" class="cta-btn">
@@ -341,6 +386,9 @@
   </a>
 
   <p class="cta-note">No spam · Real signals · Join 5000+ traders</p>
+
+  <!-- CREDIT LINE -->
+  <p class="credit">Ads by <a href="https://t.me/+TRlJl628l-FkMWE9" target="_blank" rel="noopener">@Nexgroww_agency</a></p>
 
 </div>
 </body>
